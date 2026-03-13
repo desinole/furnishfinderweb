@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://desinole.github.io/furnishfinderweb/sitemap.xml
+
+# Welcome crawlers and AI agents
+# This site promotes a furnished mid-term rental cottage in Chattahoochee, FL
+# See /llms.txt for AI-friendly content summary
