@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://desinole.github.io/furnishfinderweb/sitemap.xml
+Sitemap: https://www.chattahoochee-rentals.com/sitemap.xml
 
 # Welcome crawlers and AI agents
-# This site promotes a furnished mid-term rental cottage in Chattahoochee, FL
+# This site lists rental properties in Chattahoochee, FL with monthly and annual lease options
 # See /llms.txt for AI-friendly content summary

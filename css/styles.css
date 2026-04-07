@@ -1,5 +1,5 @@
 /* ============================================
-   Chattahoochee Cottage Rental - Styles
+   Chattahoochee Rentals - Styles
    A nature-inspired, mobile-first design
    ============================================ */
 
@@ -123,6 +123,10 @@ ul {
     color: var(--color-primary-dark);
 }
 
+.logo:hover {
+    color: var(--color-primary);
+}
+
 .logo-icon {
     font-size: 1.5rem;
 }
@@ -220,6 +224,7 @@ ul {
     transition: all var(--transition);
     border: 2px solid transparent;
     text-decoration: none;
+    font-family: var(--font-body);
 }
 
 .btn-primary {
@@ -412,99 +417,199 @@ ul {
     margin-right: auto;
 }
 
-/* --- Gallery (Placeholders) --- */
-.gallery-grid {
+/* --- Property Cards --- */
+.properties-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.gallery-placeholder {
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #d4a373 0%, #e9c46a 100%);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform var(--transition);
-    overflow: hidden;
-}
-
-.gallery-placeholder:hover {
-    transform: scale(1.02);
-}
-
-.gallery-main {
-    grid-column: 1 / -1;
-    aspect-ratio: 16/7;
-}
-
-.placeholder-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.placeholder-icon {
-    font-size: 2.5rem;
-}
-
-@media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    .gallery-main {
-        aspect-ratio: 16/9;
-    }
-}
-
-/* --- Amenities --- */
-.amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
     gap: 2rem;
 }
 
-.amenity-category {
+.property-card {
     background: var(--color-white);
-    padding: 2rem;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition);
+    overflow: hidden;
+    transition: box-shadow var(--transition), transform var(--transition);
 }
 
-.amenity-category:hover {
-    box-shadow: var(--shadow-md);
+.property-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
 }
 
-.amenity-category h3 {
-    font-size: 1.15rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary-dark);
-}
-
-.amenity-category ul {
-    list-style: none;
-}
-
-.amenity-category li {
-    padding: 0.35rem 0;
-    padding-left: 1.25rem;
+.property-image {
     position: relative;
+}
+
+.property-image-placeholder {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 50%, #52b788 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.property-image-placeholder .placeholder-icon {
+    font-size: 3rem;
+}
+
+.coming-soon-placeholder {
+    background: linear-gradient(135deg, #555 0%, #888 100%);
+    opacity: 0.7;
+}
+
+.property-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.badge-furnished {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.badge-pet {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.property-details {
+    padding: 1.75rem;
+}
+
+.property-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.property-location {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.property-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.spec {
+    background: var(--color-bg);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.property-features {
+    margin-bottom: 1.25rem;
+}
+
+.property-features p {
     color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.lease-options {
+    margin-bottom: 1.25rem;
+}
+
+.lease-options h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.lease-types {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.lease-badge {
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.lease-monthly {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.lease-annual {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #bbdefb;
+}
+
+.property-amenities-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.property-amenities-preview span {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    background: var(--color-bg-alt);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+}
+
+.btn-contact {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.05rem;
+}
+
+.coming-soon-details {
+    text-align: center;
+}
+
+.coming-soon-details p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
     font-size: 0.95rem;
 }
 
-.amenity-category li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--color-primary);
-    font-weight: 700;
+.coming-soon-details .btn-contact {
+    width: auto;
+}
+
+@media (max-width: 540px) {
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Location --- */
@@ -571,7 +676,7 @@ ul {
     display: block;
 }
 
-/* --- Persona / Who It's For --- */
+/* --- Persona / Why Chattahoochee --- */
 .persona-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -606,59 +711,6 @@ ul {
     color: var(--color-text-light);
     font-size: 0.95rem;
     line-height: 1.7;
-}
-
-/* --- Pricing Section --- */
-.pricing-section {
-    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-    color: var(--color-white);
-    text-align: center;
-}
-
-.pricing-card {
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.pricing-card h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 1.5rem;
-}
-
-.price-display {
-    margin-bottom: 2rem;
-}
-
-.price-amount {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: var(--color-accent-light);
-    display: block;
-    line-height: 1;
-}
-
-.price-period {
-    font-size: 1.15rem;
-    opacity: 0.85;
-}
-
-.pricing-includes {
-    list-style: none;
-    text-align: left;
-    max-width: 400px;
-    margin: 0 auto 2.5rem;
-}
-
-.pricing-includes li {
-    padding: 0.4rem 0;
-    font-size: 1.05rem;
-}
-
-.pricing-note {
-    margin-top: 1.25rem;
-    font-size: 0.85rem;
-    opacity: 0.7;
 }
 
 /* --- FAQ --- */
@@ -748,6 +800,139 @@ ul {
     line-height: 1.7;
 }
 
+/* --- Contact Modal --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    line-height: 1;
+    padding: 0.25rem;
+    transition: color var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--color-text);
+}
+
+.modal h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.25rem;
+}
+
+.modal-subtitle {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-white);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.form-success {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.form-success h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-success p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+}
+
 /* --- Footer --- */
 .site-footer {
     background: var(--color-primary-dark);
@@ -808,7 +993,7 @@ ul {
 
 /* --- Utility / Print --- */
 @media print {
-    .site-header, .hero-cta, .btn-nav, .mobile-menu-toggle {
+    .site-header, .hero-cta, .btn-nav, .mobile-menu-toggle, .modal-overlay {
         display: none !important;
     }
     .hero {

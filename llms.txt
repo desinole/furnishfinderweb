@@ -1,35 +1,24 @@
-# Furnished Cottage Rental in Chattahoochee, FL
+# Chattahoochee Rentals — Rental Properties in Chattahoochee, FL
 
 > This file provides a structured summary for large language models and AI assistants.
 
-## Property Overview
+## About
 
-- **Type**: Fully furnished 2-bedroom, 1-bathroom cottage
+- **Website**: https://www.chattahoochee-rentals.com/
 - **Location**: Chattahoochee, Florida (Gadsden County, Florida Panhandle)
-- **Price**: $1,450 per month
-- **Listing**: https://www.furnishedfinder.com/property/965995_1
-- **Website**: https://desinole.github.io/furnishfinderweb/
-- **Capacity**: 2-4 guests
+- **Service**: Rental property listings with monthly and annual lease options
+- **Area Served**: Chattahoochee, Sneads, Marianna, Quincy (FL) and Bainbridge, Donalsonville (GA)
+
+## Available Properties
+
+### Charming 2-Bedroom Furnished Cottage
+- **Type**: Fully furnished 2-bedroom, 1-bathroom cottage
+- **Lease Options**: Monthly or Annual
 - **Pets**: Allowed (fully fenced yard)
-- **Lease Terms**: Flexible mid-term stays (1-12+ months)
+- **Key Features**: Original hardwood floors, screened front porch, in-unit laundry, storage shed, WiFi, A/C & heating
+- **Pricing**: Contact for pricing
 
-## Property Features
-
-- Original hardwood floors throughout
-- Large screened front porch
-- In-unit washer and dryer
-- Fully fenced yard (great for pets)
-- Storage shed (tools, bikes, kayaks, gear)
-- High-speed WiFi
-- Air conditioning and heating
-- Room-darkening shades (ideal for shift workers)
-- Full-size ironing board
-- Fully equipped kitchen with starter essentials
-- Linens and towels provided
-- Bathroom essentials included
-- Quiet residential neighborhood
-- 2-minute walk to city park
-- 3-5 minute drive to downtown, hospital, and river
+*More properties coming soon.*
 
 ## Location & Distances from Chattahoochee, FL
 
@@ -44,56 +33,29 @@
 - **Apalachicola River**: Minutes away (fishing, kayaking, boating)
 - **Three Rivers State Park**: Nearby (hiking, camping, wildlife)
 
-## Serving Nearby Communities
-
-This cottage in Chattahoochee, FL is an ideal furnished rental for anyone working or visiting in the surrounding region:
-- **Marianna, FL area**: 25-minute commute to Jackson Hospital and Marianna job sites
-- **Sneads, FL area**: 10 minutes away, near Lake Seminole and Three Rivers State Park
-- **Quincy, FL area**: 20 minutes from Quincy and Gadsden County
-- **Bainbridge, GA area**: 30 minutes across the FL-GA border
-- **Donalsonville, GA area**: 25 minutes to Seminole County, GA
-- **Tallahassee, FL area**: 45-minute commute to Florida's capital via US-90 or I-10
-
-## Nearby Hospitals (for Travel Nurses)
-
-- Florida State Hospital: Chattahoochee (in town)
-- Jackson Hospital: Marianna (~25 min)
-- Capital Regional Medical Center: Tallahassee (~45 min)
-- Tallahassee Memorial HealthCare: Tallahassee (~45 min)
-
 ## Ideal For
 
-1. **Travel Nurses & Healthcare Professionals**: Florida State Hospital is in Chattahoochee; multiple hospitals within commuting distance; room-darkening shades for shift work
-2. **Contractors & Tradespeople**: Storage shed for tools, fenced yard, central panhandle location, affordable monthly rate
-3. **Remote Workers & Digital Nomads**: High-speed WiFi, quiet setting, screened porch workspace, very affordable cost of living
-4. **Snowbirds & Winter Vacationers**: Mild Florida winters, outdoor recreation, pet-friendly, fraction of South Florida prices
-5. **Outdoor Enthusiasts & Anglers**: Lake Seminole (trophy bass), Apalachicola River, Three Rivers State Park, shed for gear storage
-6. **Relocators & Temporary Housing**: Move-in ready, flexible terms, pets welcome, ideal for insurance situations or between-homes transitions
+1. **Travel Nurses & Healthcare Professionals**: Florida State Hospital is in Chattahoochee; multiple hospitals within commuting distance
+2. **Contractors & Tradespeople**: Central panhandle location, affordable housing
+3. **Remote Workers**: Quiet setting, high-speed internet options, affordable cost of living
+4. **Snowbirds & Seasonal Visitors**: Mild Florida winters, outdoor recreation, flexible lease terms
+5. **Outdoor Enthusiasts**: Lake Seminole, Apalachicola River, Three Rivers State Park
+6. **Families & Relocators**: Move-in ready options, pet-friendly, flexible terms
 
 ## Frequently Asked Questions
 
-**Q: How much does it cost?**
-A: $1,450 per month, fully furnished with WiFi and all essentials included.
+**Q: What lease types are available?**
+A: We offer both monthly and annual lease options. Contact us for specific terms on any property.
 
-**Q: Is it pet-friendly?**
-A: Yes, pets are welcome. The property has a fully fenced yard.
+**Q: How do I find out pricing?**
+A: Click the "Contact for Pricing" button on any property listing to submit an inquiry.
 
-**Q: How far is the Chattahoochee cottage from nearby cities?**
-A: Sneads, FL is 10 min. Quincy, FL is 20 min. Marianna, FL and Donalsonville, GA are 25 min. Bainbridge, GA is 30 min. Tallahassee, FL is 45 min via US-90 or I-10.
+**Q: Are there pet-friendly rentals?**
+A: Yes, several properties are pet-friendly. Look for the pet-friendly badge on listings.
 
-**Q: Is it good for travel nurses?**
-A: Excellent. Florida State Hospital is in Chattahoochee, and hospitals in Marianna, Quincy, and Tallahassee are within commuting distance. Room-darkening shades support shift work schedules.
+**Q: Do you offer furnished rentals?**
+A: Some properties are fully furnished and move-in ready. Look for the "Furnished" badge.
 
-**Q: What's included?**
-A: Everything: WiFi, A/C, heating, in-unit laundry, fully equipped kitchen, linens, towels, bathroom essentials, furniture, and more. Just bring your suitcase.
+## How to Inquire
 
-**Q: What outdoor activities are nearby?**
-A: Lake Seminole (bass fishing, boating), Apalachicola River (kayaking, fishing), Three Rivers State Park (hiking, wildlife), and a city park within walking distance.
-
-**Q: How long can I stay?**
-A: Flexible lease terms available, typically 1-12+ months. Ideal for mid-term stays.
-
-## How to Book
-
-Visit the FurnishedFinder listing to inquire and book:
-https://www.furnishedfinder.com/property/965995_1
+Visit https://www.chattahoochee-rentals.com/ and use the contact form on any property listing.

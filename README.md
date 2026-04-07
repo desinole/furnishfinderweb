@@ -1,17 +1,16 @@
-# Chattahoochee Cottage - Furnished Rental Website
+# Chattahoochee Rentals — Rental Properties in Chattahoochee, FL
 
-SEO-optimized static website for a furnished mid-term rental cottage in Chattahoochee, FL.
+SEO-optimized static website listing rental properties in Chattahoochee, Florida with monthly and annual lease options.
 
-🔗 **Live Site**: [desinole.github.io/furnishfinderweb](https://desinole.github.io/furnishfinderweb/)  
-🏠 **FurnishedFinder Listing**: [View Listing](https://www.furnishedfinder.com/property/965995_1)
+🔗 **Live Site**: [chattahoochee-rentals.com](https://www.chattahoochee-rentals.com/)
 
 ## About
 
-This site provides public visibility and organic SEO for a fully furnished 2-bedroom cottage in Chattahoochee, Florida, listed on FurnishedFinder. It targets travel nurses, contractors, remote workers, snowbirds, and outdoor enthusiasts searching for mid-term furnished housing in the Florida Panhandle.
+This site lists rental properties in Chattahoochee, FL, targeting travel nurses, contractors, remote workers, snowbirds, and outdoor enthusiasts seeking housing in the Florida Panhandle. Properties are displayed as cards with "Contact for Pricing" inquiry forms. Each listing supports monthly and annual lease options.
 
 ## SEO Features
 
-- Schema.org structured data (LodgingBusiness + FAQPage)
+- Schema.org structured data (RealEstateAgent + FAQPage)
 - Open Graph & Twitter Card meta tags
 - Geo meta tags for local search
 - `sitemap.xml` for search engine indexing
@@ -21,14 +20,23 @@ This site provides public visibility and organic SEO for a fully furnished 2-bed
 - Mobile-first responsive design
 - FAQ section optimized for featured snippets
 
-## Hosting
+## Adding a New Property
 
-Hosted on GitHub Pages from the `main` branch.
+To add a new property listing, duplicate a `<article class="property-card">` block in `index.html` and update:
+
+1. The property image/placeholder
+2. Badges (furnished, pet-friendly, etc.)
+3. Title, location, specs, features
+4. Lease options (monthly, annual, or both)
+5. Amenity preview tags
+6. The `data-property` attribute on the contact button
 
 ## Adding Photos
 
-Replace the gallery placeholder sections in `index.html` with actual images:
-
 1. Add photos to the `images/` directory
-2. Update the gallery section in `index.html` to reference your images
-3. Add an `og-cottage.jpg` (1200x630px) for social sharing previews
+2. Replace `property-image-placeholder` divs with `<img>` tags
+3. Add an `og-chattahoochee-rentals.jpg` (1200x630px) for social sharing previews
+
+## Hosting
+
+Hosted on GitHub Pages from the `main` branch.
