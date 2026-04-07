@@ -153,50 +153,14 @@
                     <span class="hero-tag">🏥 Near Florida State Hospital</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="#properties" class="btn btn-primary btn-large">Browse Properties</a>
-                    <a href="#contact" class="btn btn-secondary btn-large">Contact Us</a>
+                    <a href="#properties" class="btn btn-cta-hero btn-large">🏠 Browse Available Properties ↓</a>
                 </div>
+                <p class="hero-scroll-hint">Scroll down to see listings</p>
             </div>
         </section>
 
-        <!-- Highlights Strip -->
-        <section class="highlights-strip" aria-label="Quick highlights">
-            <div class="container">
-                <div class="highlights-grid">
-                    <div class="highlight-item">
-                        <span class="highlight-icon">📋</span>
-                        <div>
-                            <strong>Flexible Leases</strong>
-                            <span>Monthly or annual</span>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🏡</span>
-                        <div>
-                            <strong>Quality Homes</strong>
-                            <span>Well-maintained properties</span>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🌿</span>
-                        <div>
-                            <strong>Small-Town Living</strong>
-                            <span>Peaceful &amp; affordable</span>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🎣</span>
-                        <div>
-                            <strong>Outdoor Paradise</strong>
-                            <span>Lake Seminole &amp; more</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Properties Section -->
-        <section id="properties" class="section">
+        <!-- Properties Section (directly after hero for prominence) -->
+        <section id="properties" class="section properties-section">
             <div class="container">
                 <h2 class="section-title">Available Rental Properties</h2>
                 <p class="section-subtitle">Explore our current listings in Chattahoochee, FL</p>
@@ -507,9 +471,23 @@
                     <label for="contactMessage">Message</label>
                     <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your needs — move-in date, number of occupants, pets, questions, etc."></textarea>
                 </div>
+                <!-- Honeypot: hidden from humans, bots will fill it -->
+                <div class="form-group" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <label for="contactWebsite">Website</label>
+                    <input type="text" id="contactWebsite" name="website" tabindex="-1" autocomplete="off">
+                </div>
+                <!-- Simple math question for human verification -->
+                <div class="form-group spam-check">
+                    <label for="contactVerify" id="verifyLabel">Quick check: What is <strong><span id="mathNum1"></span> + <span id="mathNum2"></span></strong>? *</label>
+                    <input type="number" id="contactVerify" name="verify" required placeholder="Your answer" autocomplete="off">
+                    <span class="verify-hint">Just a quick check to make sure you're a real person!</span>
+                </div>
                 <input type="hidden" id="contactProperty" name="property" value="">
                 <button type="submit" class="btn btn-primary btn-large form-submit">Send Inquiry</button>
             </form>
+            <div class="form-error" id="formError" style="display:none;">
+                <p>⚠️ That doesn't look right — please double-check your math answer and try again.</p>
+            </div>
             <div class="form-success" id="formSuccess" style="display:none;">
                 <div class="success-icon">✅</div>
                 <h3>Thank You!</h3>
@@ -592,14 +570,29 @@
         });
 
         // Contact modal
+        let mathAnswer = 0;
+
+        function generateMathQuestion() {
+            const a = Math.floor(Math.random() * 8) + 1; // 1-8
+            const b = Math.floor(Math.random() * 8) + 1; // 1-8
+            mathAnswer = a + b;
+            document.getElementById('mathNum1').textContent = a;
+            document.getElementById('mathNum2').textContent = b;
+            document.getElementById('contactVerify').value = '';
+        }
+
         function openContactModal(trigger) {
             const propertyName = trigger.getAttribute('data-property') || 'General Inquiry';
             document.getElementById('contactProperty').value = propertyName;
             document.getElementById('modalPropertyName').textContent = propertyName;
             document.getElementById('contactForm').style.display = '';
+            document.getElementById('formSuccess').style.display = '';
+            document.getElementById('formError').style.display = 'none';
             document.getElementById('formSuccess').style.display = 'none';
             document.getElementById('contactModal').classList.add('active');
+            document.getElementById('contactWebsite').value = '';
             document.body.style.overflow = 'hidden';
+            generateMathQuestion();
             document.getElementById('contactName').focus();
         }
 
@@ -621,6 +614,23 @@
         // Form submission handler
         function handleFormSubmit(e) {
             e.preventDefault();
+
+            // Honeypot check — bots fill this hidden field
+            if (document.getElementById('contactWebsite').value) {
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('formSuccess').style.display = '';
+                return;
+            }
+
+            // Math question check
+            const userAnswer = parseInt(document.getElementById('contactVerify').value, 10);
+            if (userAnswer !== mathAnswer) {
+                document.getElementById('formError').style.display = '';
+                document.getElementById('contactVerify').focus();
+                return;
+            }
+
+            document.getElementById('formError').style.display = 'none';
             // In production, replace with actual form submission (e.g., Formspree, Netlify Forms, or custom backend)
             document.getElementById('contactForm').style.display = 'none';
             document.getElementById('formSuccess').style.display = '';
