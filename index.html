@@ -413,13 +413,6 @@
                     </details>
 
                     <details class="faq-item">
-                        <summary>Is Chattahoochee good for travel nurses?</summary>
-                        <div class="faq-answer">
-                            <p>Absolutely. <strong>Florida State Hospital</strong> is located right in Chattahoochee. You're also within commuting distance of Jackson Hospital (Marianna, 25 min) and multiple Tallahassee hospitals (45 min). Several of our properties cater to healthcare professionals with flexible lease terms.</p>
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
                         <summary>What outdoor activities are nearby?</summary>
                         <div class="faq-answer">
                             <p>Chattahoochee is a <strong>paradise for outdoor enthusiasts</strong>:</p>
@@ -453,6 +446,10 @@
             <h2 id="modalTitle">Inquire About a Property</h2>
             <p class="modal-subtitle" id="modalPropertyName"></p>
             <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                <!-- Web3Forms: replace YOUR_ACCESS_KEY_HERE with your key from https://web3forms.com -->
+                <input type="hidden" name="access_key" value="ee205379-4db3-4c6a-8036-7c14818edc5c">
+                <input type="hidden" name="subject" value="New Rental Inquiry — Chattahoochee Rentals">
+                <input type="hidden" name="from_name" value="Chattahoochee Rentals Website">
                 <div class="form-group">
                     <label for="contactName">Your Name *</label>
                     <input type="text" id="contactName" name="name" required placeholder="Full name">
@@ -649,9 +646,42 @@
             }
 
             document.getElementById('formError').style.display = 'none';
-            // In production, replace with actual form submission (e.g., Formspree, Netlify Forms, or custom backend)
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('formSuccess').style.display = '';
+
+            // Submit to Web3Forms API
+            const form = document.getElementById('contactForm');
+            const submitBtn = form.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(form);
+            // Remove spam-check fields from submission
+            formData.delete('verify');
+            formData.delete('website');
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry';
+                if (data.success) {
+                    document.getElementById('contactForm').style.display = 'none';
+                    document.getElementById('formSuccess').style.display = '';
+                } else {
+                    document.getElementById('formError').querySelector('p').textContent =
+                        '⚠️ Something went wrong. Please try again or email us directly.';
+                    document.getElementById('formError').style.display = '';
+                }
+            })
+            .catch(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry';
+                document.getElementById('formError').querySelector('p').textContent =
+                    '⚠️ Could not send your message. Please check your connection and try again.';
+                document.getElementById('formError').style.display = '';
+            });
         }
 
         // --- Slideshow ---
