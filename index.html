@@ -145,6 +145,9 @@
             <div class="hero-content">
                 <div class="hero-badge">Rental Properties in Chattahoochee, FL</div>
                 <h1>Find Your Next Home in <span class="highlight">Chattahoochee, Florida</span></h1>
+                <div class="hero-cta">
+                    <a href="#properties" class="btn btn-cta-hero btn-large">🏠 Browse Available Properties ↓</a>
+                </div>
                 <p class="hero-subtitle">Browse rental properties with flexible monthly and annual lease options in the heart of the Florida Panhandle. Small-town charm, big outdoor adventure.</p>
                 <div class="hero-highlights">
                     <span class="hero-tag">📋 Monthly &amp; Annual Leases</span>
@@ -152,10 +155,6 @@
                     <span class="hero-tag">🎣 Near Lake Seminole</span>
                     <span class="hero-tag">🏥 Near Florida State Hospital</span>
                 </div>
-                <div class="hero-cta">
-                    <a href="#properties" class="btn btn-cta-hero btn-large">🏠 Browse Available Properties ↓</a>
-                </div>
-                <p class="hero-scroll-hint">Scroll down to see listings</p>
             </div>
         </section>
 
@@ -166,31 +165,40 @@
                 <p class="section-subtitle">Explore our current listings in Chattahoochee, FL</p>
 
                 <div class="properties-grid">
-                    <!-- Property Card: Furnished Cottage -->
+                    <!-- Property Card: Cottage -->
                     <article class="property-card">
                         <div class="property-image">
-                            <div class="property-image-placeholder">
-                                <span class="placeholder-icon">🏡</span>
-                                <span>Furnished Cottage</span>
+                            <div class="slideshow" data-property-id="cottage">
+                                <div class="slideshow-track">
+                                    <!-- Replace src with real photos; add/remove slides as needed -->
+                                    <div class="slide active"><img src="images/cottage/exterior.jpg" alt="Cottage exterior view" loading="lazy"><span class="slide-caption">Cottage Exterior</span></div>
+                                    <div class="slide"><img src="images/cottage/living-room.jpg" alt="Living room with hardwood floors" loading="lazy"><span class="slide-caption">Living Room</span></div>
+                                    <div class="slide"><img src="images/cottage/bedroom.jpg" alt="Bedroom" loading="lazy"><span class="slide-caption">Bedroom</span></div>
+                                    <div class="slide"><img src="images/cottage/kitchen.jpg" alt="Fully equipped kitchen" loading="lazy"><span class="slide-caption">Kitchen</span></div>
+                                    <div class="slide"><img src="images/cottage/porch.jpg" alt="Screened front porch" loading="lazy"><span class="slide-caption">Screened Porch</span></div>
+                                    <div class="slide"><img src="images/cottage/yard.jpg" alt="Fenced yard" loading="lazy"><span class="slide-caption">Fenced Yard</span></div>
+                                </div>
+                                <button class="slide-btn slide-prev" aria-label="Previous photo">‹</button>
+                                <button class="slide-btn slide-next" aria-label="Next photo">›</button>
+                                <div class="slide-counter"><span class="slide-current">1</span> / <span class="slide-total">6</span></div>
+                                <button class="slide-expand" aria-label="View all photos" title="View all photos">⛶ View All</button>
                             </div>
                             <div class="property-badges">
-                                <span class="badge badge-furnished">Furnished</span>
                                 <span class="badge badge-pet">🐾 Pet Friendly</span>
                             </div>
                         </div>
                         <div class="property-details">
-                            <h3 class="property-title">Charming 2-Bedroom Furnished Cottage</h3>
+                            <h3 class="property-title">Charming 2-Bedroom Cottage</h3>
                             <p class="property-location">📍 Chattahoochee, FL &middot; Quiet Residential Neighborhood</p>
 
                             <div class="property-specs">
                                 <span class="spec">🛏️ 2 Bed</span>
                                 <span class="spec">🚿 1 Bath</span>
-                                <span class="spec">📶 WiFi</span>
                                 <span class="spec">🧺 In-Unit Laundry</span>
                             </div>
 
                             <div class="property-features">
-                                <p>Fully furnished cottage with original hardwood floors, large screened front porch, fenced yard, and storage shed. Move-in ready with all essentials, linens, and kitchen supplies included. Minutes from Lake Seminole and Florida State Hospital.</p>
+                                <p>Fully cottage with original hardwood floors, large screened front porch, fenced yard, and storage shed. Move-in ready. Minutes from Lake Seminole and Florida State Hospital.</p>
                             </div>
 
                             <div class="lease-options">
@@ -210,7 +218,7 @@
                                 <span>✓ Parking</span>
                             </div>
 
-                            <button class="btn btn-primary btn-contact" data-property="Charming 2-Bedroom Furnished Cottage" onclick="openContactModal(this)">
+                            <button class="btn btn-primary btn-contact" data-property="Charming 2-Bedroom Cottage" onclick="openContactModal(this)">
                                 Contact for Pricing →
                             </button>
                         </div>
@@ -386,7 +394,7 @@
                     <details class="faq-item">
                         <summary>Do you offer furnished rentals?</summary>
                         <div class="faq-answer">
-                            <p>Some of our properties are <strong>fully furnished</strong> and move-in ready, while others are unfurnished. Furnished properties are marked with a "Furnished" badge and include essentials like furniture, kitchen supplies, linens, and WiFi.</p>
+                            <p>Some of our properties have the option of being <strong>fully furnished</strong> and move-in ready, while others are unfurnished. If Furnished, properties will include essentials like furniture, kitchen supplies, linens, and WiFi.</p>
                         </div>
                     </details>
 
@@ -494,6 +502,17 @@
                 <p>Your inquiry has been received. We'll get back to you as soon as possible.</p>
                 <button class="btn btn-primary" onclick="closeContactModal()">Close</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Photo Lightbox / Album Viewer -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Property photo album">
+        <div class="lightbox-header">
+            <h3 class="lightbox-title" id="lightboxTitle">Property Photos</h3>
+            <button class="lightbox-close" aria-label="Close photo album" onclick="closeLightbox()">&times;</button>
+        </div>
+        <div class="lightbox-album" id="lightboxAlbum">
+            <!-- Photos injected by JS -->
         </div>
     </div>
 
@@ -635,6 +654,105 @@
             document.getElementById('contactForm').style.display = 'none';
             document.getElementById('formSuccess').style.display = '';
         }
+
+        // --- Slideshow ---
+        document.querySelectorAll('.slideshow').forEach(function(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const total = slides.length;
+            let current = 0;
+            let autoplayTimer = null;
+
+            slideshow.querySelector('.slide-total').textContent = total;
+
+            function showSlide(index) {
+                slides[current].classList.remove('active');
+                current = (index + total) % total;
+                slides[current].classList.add('active');
+                slideshow.querySelector('.slide-current').textContent = current + 1;
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayTimer = setInterval(function() { showSlide(current + 1); }, 4000);
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+            }
+
+            slideshow.querySelector('.slide-prev').addEventListener('click', function(e) {
+                e.stopPropagation();
+                showSlide(current - 1);
+                startAutoplay();
+            });
+
+            slideshow.querySelector('.slide-next').addEventListener('click', function(e) {
+                e.stopPropagation();
+                showSlide(current + 1);
+                startAutoplay();
+            });
+
+            // Click on image opens lightbox
+            slideshow.querySelector('.slideshow-track').addEventListener('click', function() {
+                openLightbox(slideshow);
+            });
+
+            slideshow.querySelector('.slide-expand').addEventListener('click', function(e) {
+                e.stopPropagation();
+                openLightbox(slideshow);
+            });
+
+            // Touch swipe support
+            let touchStartX = 0;
+            slideshow.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            slideshow.addEventListener('touchend', function(e) {
+                const diff = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(diff) > 50) {
+                    showSlide(diff > 0 ? current - 1 : current + 1);
+                    startAutoplay();
+                }
+            }, { passive: true });
+
+            startAutoplay();
+        });
+
+        // --- Lightbox / Album Viewer ---
+        function openLightbox(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const album = document.getElementById('lightboxAlbum');
+            const propertyCard = slideshow.closest('.property-card');
+            const title = propertyCard ? propertyCard.querySelector('.property-title').textContent : 'Property Photos';
+            document.getElementById('lightboxTitle').textContent = title;
+
+            album.innerHTML = '';
+            slides.forEach(function(slide) {
+                const img = slide.querySelector('img');
+                const caption = slide.querySelector('.slide-caption');
+                const item = document.createElement('div');
+                item.className = 'lightbox-item';
+                item.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '">' +
+                    (caption ? '<p class="lightbox-caption">' + caption.textContent + '</p>' : '');
+                album.appendChild(item);
+            });
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('lightbox').classList.contains('active')) {
+                closeLightbox();
+            }
+        });
     </script>
 </body>
 </html>
