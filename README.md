@@ -2,7 +2,7 @@
 
 SEO-optimized static website listing rental properties in Chattahoochee, Florida with monthly and annual lease options.
 
-🔗 **Live Site**: [chattahoochee-rentals.com](https://www.chattahoochee-rentals.com/)
+🔗 **Live Site**: [chattahoocheerentals.com](https://www.chattahoocheerentals.com/)
 
 ## About
 

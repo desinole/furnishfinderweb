@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.chattahoochee-rentals.com/sitemap.xml
+Sitemap: https://www.chattahoocheerentals.com/sitemap.xml
 
 # Welcome crawlers and AI agents
 # This site lists rental properties in Chattahoochee, FL with monthly and annual lease options
